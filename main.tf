@@ -11,8 +11,8 @@ resource "aws_sqs_queue" "this" {
 
 
 module "aws_kms" {
-  source = "../aws-kms"
-  #source = "git::https://github.com/e2eSolutionArchitect/terraform-aws-kms.git?ref=v1.0.0"
+  #source = "../aws-kms"
+  source = "git::https://github.com/e2eSolutionArchitect/terraform-aws-kms.git?ref=v1.0.0"
   kms_name                = "encryption key for ${var.sqs_name}"
   kms_alias               = var.sqs_name
   deletion_window_in_days = var.deletion_window_in_days
